@@ -1,0 +1,11 @@
+ {% extends "web/base.html" %} {%block title %} Home Page {% endblock %}{% block content %}{%include "web/side.html"%}
+<style>
+    .home_content {
+        position: relative;
+        top: -300px;
+    }
+</style>
+<div class="home_content">
+    {%include "web/home_content.html"%}
+</div>
+{%endblock%}

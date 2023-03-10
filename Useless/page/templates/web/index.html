@@ -1,0 +1,27 @@
+ {% extends "web/base.html" %} {%block title %} Home Page {% endblock %} {% block content %}
+<style>
+    .login_icon {
+        position: relative;
+        float: right;
+        top: -100px;
+        right: 5rem;
+        font-size: large;
+        color: #fff;
+    }
+    
+    .index_content {
+        position: relative;
+        top: 300px;
+    }
+</style>
+
+<div class="login_icon">
+    <li>
+        <a href="/login" style="color: #fff;"><span class="fa fa-user"></span> Login</a>
+    </li>
+</div>
+
+<div class="index_content">
+    {%include "web/home_content.html"%}
+</div>
+{%endblock%}

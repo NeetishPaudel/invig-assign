@@ -1,0 +1,33 @@
+---------account registration--------------
+
+<!-- <div>
+{% if value %}
+<ul>
+    {% for teacher in value %}
+    <li><a href="/page/{{ teacher.id }}/">{{ teacher.first_Name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No Teachers list.</p>
+{% endif %}
+</div> -->
+
+---------------page profie display------------
+   
+{% for item in context.teacher_set.all()%}
+
+{% endfor %}
+
+
+    <!-- {% if context.category == 'T' %}
+    <p>Teacher</p>
+    {% elif context.category=='S' %}
+    <p>Staff</p> {% else %}
+    <p>Student</p> {% endif %} -->
+
+----------------------base.html---------------------------
+
+{% if user.is_authenticated %} 
+{% else %}
+<p> Login <a href="../login/">here</a></p>
+{% endif %}

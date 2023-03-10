@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" >
+
+
+<head>
+    <title>{% block title %}Base{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">{%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        .logo-container {
+            height: inherit;
+            padding-left: 0px;
+            position: relative;
+            top: -20px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #303030;
+        }
+        
+        .logo {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div>
+    <div class="logo-container">
+        {%if user.is_authenticated%}
+        <a href="/home">
+            <h1><img src="{% static 'img/lolo.png' %}" class="logo"></h1>
+        </a>
+        {%else%}
+        <a href="/">
+            <h1><img src="{% static 'img/lolo.png' %}" class="logo"></h1>
+        </a>
+        {%endif%}
+
+        <h1 style="color:#fff">
+            Tribhuvan University
+        </h1>
+    </div>
+    <div id="content" name="content">
+
+        {% block content %} {% endblock %}
+    </div>
+</div>
+</body>
+
+</html>
